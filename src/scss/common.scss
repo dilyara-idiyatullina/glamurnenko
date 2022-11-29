@@ -1,0 +1,501 @@
+@import '_variables.scss';
+@import '_fonts.scss';
+@import '_mixin.scss';
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $lightBackgroundColor;
+  font-family: 'Roboto', sans-serif;
+  color: $darkFontColor;
+  font-weight: 400;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;  
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+p {
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: $lightFontColor;
+  transition: color .3s ease;
+}
+
+a:hover {
+  text-decoration: none;
+  color: $greyFontColor;
+}
+
+a:active {
+  color: $darkFontColor;
+}
+
+h1, h2, h3, h4 {
+  margin: 0;
+  font-weight: 400;
+}
+
+.reset-btn {
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: transparent;
+}
+
+.header.header-scrolled {
+  background-color: rgba(26, 25, 25, 0.9);
+}
+
+.header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  width: 100%;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  z-index: 5;
+  transition: background-color .5s ease;
+ 
+  a {
+    font-family: 'Oranienbaum', sans-serif;
+    font-size: 20px;
+    line-height: 21px;
+    color: $lightFontColor;
+  }
+
+  &__navbar {
+    background-color: transparent;
+  }
+
+  &__phone {
+    text-align: end;
+    font-family: 'Oranienbaum', sans-serif;
+    font-size: 16px;
+    line-height: 20px;
+    color: $lightFontColor;
+  }
+}
+
+.nav {
+  z-index: 5;
+}
+
+.nav-link {
+  padding-left: 3px;
+  padding-right: 3px;
+  transition: color .3s ease;
+}
+
+.nav-link:hover {
+  color: $greyFontColor;
+}
+
+.nav-link:focus {
+  outline: none;
+}
+
+.nav-link:active {
+  color: $greyFontColor;
+}
+
+.hero {
+  background-color: $darkBackgroundColor;
+
+  &__container {
+    background-image: url(../assets/images/bg-main.png);
+    background-repeat: no-repeat;
+    background-size: auto; 
+    background-position: center;
+  }
+
+  &__content {
+    padding-top: 260px;
+    padding-bottom: 200px;
+    padding-left: 10px;
+    height: 100%;
+    color: $lightFontColor;
+    position: relative;
+  }
+
+  .logo {
+    display: inline-block;
+    margin-bottom: 40px;
+  }
+
+  .mission,
+  &__description {
+    margin-bottom: 10px;
+    font-family: 'Oranienbaum', sans-serif;
+    font-size: 28px;
+    line-height: 1;
+    color: $lightFontColor;
+  }
+
+  .mission {
+    margin-bottom: 0;
+    text-decoration: underline;
+    font-size: 20px;
+    color:burlywood;
+  }
+
+  &__heading, &__date {
+    font-family: 'Oranienbaum', sans-serif;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 104%;
+  }
+
+  &__date {
+    margin-bottom: 19px;
+  }
+}
+
+.section-heading {
+  @include section-header();
+}
+
+.section-description {
+  @include section-description();
+}
+
+.big-img {
+  width: 100%;
+  height: 60%;
+
+  &__img {
+    padding-bottom: 10px;
+    width: 100%;
+  }
+
+  &__description {
+    text-align: center;
+    font-weight: 100;
+    color: $greyFontColor;
+  }
+}
+
+.new {
+  padding-top: 50px;
+  padding-bottom: 30px;
+  position: relative;
+  overflow: hidden;
+  @include marker(45px, -75px, attr(data-text)); 
+
+  &__heading {
+    margin-bottom: 50px;
+    text-align: center;
+  }
+
+  &__description {
+    padding: 20px 140px;
+    text-align: center;
+  }
+
+  &__img {
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+.about {
+  padding-top: 33px;
+  padding-bottom: 71px;
+
+  &__heading {
+    margin-bottom: 50px;   
+  } 
+
+  &__container {
+    padding: 20px 130px;
+  }
+}
+
+.description-item {
+  margin-bottom: 40px;
+  font-size: 24px;
+  font-weight: 100;
+  line-height: 1.5;
+  color: $greyFontColor;
+}
+
+.description-item-answer {
+  padding-left: 55px;
+  padding-right: 55px;
+  display: inline-block;
+}
+
+.services {
+  padding-top: 20px;
+  padding-bottom: 50px;
+  &__container {
+    padding: 20px 130px;
+  }
+  &__heading {
+    font-size: 28px;
+    text-align: center;
+    margin-bottom: 50px;   
+  } 
+}
+
+.service-card {
+  position: relative;
+  padding: 20px 30px;
+  padding-bottom: 70px;
+  height: 100%;
+  border: 2px solid $lightGreyColor;
+  transition-property: border-color, box-shadow;
+  transition-duration: .3s;
+  transition-timing-function: ease;
+
+  &__order-btn {
+    position: absolute;
+    padding: 15px;
+    display: block;
+    width: 80%;
+    left: 10%;
+    bottom: 20px;
+    text-align: center;
+    background-color: $markerBackgroundColor;
+    border-radius: 2px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    line-height: 1; 
+    font-weight: 100;
+    color: $lightFontColor;  
+    cursor: pointer;
+  }
+}
+
+.service-card:hover {
+  box-shadow: 0px 0px 25px 2px rgba(153, 153, 153, 0.3);
+  border-color: $greyColor;
+}
+
+.about-slider {
+  padding-top: 20px;
+  padding-bottom: 50px;
+  &__container {
+    padding: 20px 130px;
+  }
+  &__heading {
+    margin-bottom: 50px;   
+  } 
+}
+
+.about-slides {
+  display: flex;
+  flex-direction: column;
+
+  &__item {
+    display: flex;
+    margin-bottom: 20px;   
+    width: 100%;
+    &:last-child {
+      margin-bottom: 0;
+    }   
+  } 
+}
+
+.slide {
+  &__picture {
+    display: block;
+    flex-basis: 25%;
+    cursor: pointer;
+  }
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  &__annotation {
+    padding: 20px;
+    padding-right: 205px;
+    display: flex;
+    flex-basis: 75%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  &__description {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 28px;
+    line-height: 28px;
+    font-weight: 100;
+    color: $darkFontColor;   
+    overflow-y: scroll;
+  }
+}
+
+.btn-up {
+  @include btn(); 
+}
+
+.btn-up:hover {
+  border-color: $greyColor;
+  color: $greyColor;
+}
+
+.btn-up:active {
+  border-color: #333;
+}
+
+.btn-up:focus {
+  outline: none;
+  border-color: #333; 
+}
+
+.footer {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  background-color: $darkBackgroundColor;
+  color: $lightFontColor; 
+
+  &__container {
+    display: flex;
+    flex-direction: column;  
+    padding-left: 25px;
+  }
+
+  &__btn {
+    margin-bottom: 30px;
+    align-self: center;
+  }
+
+  &__item {
+    margin-bottom: 5px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    line-height: 24px; 
+    font-weight: 400;
+  }
+}
+
+// Extra small devices (portrait phones, less than 576px)
+@media (max-width: 575.98px) {}
+
+// Small devices (landscape phones, less than 768px)
+@media (max-width: 767.98px) { 
+
+  .hero {
+    &__container {
+      background-size: cover; 
+    }
+  
+    &__content {
+      padding-top: 150px;
+      padding-bottom: 150px;
+    }
+  }
+
+  .logo {
+    max-width: 150px;
+  }
+
+  .header {
+    padding-top: 10px;
+    padding-bottom: 5px;
+  }
+
+  .new__description,
+  .about__container,
+  .services__container,
+  .about-slider__container
+   {
+    padding: 50px;
+    text-align: center;
+  }
+
+  .slide {
+    &__annotation {
+      padding-right: 20px;
+    }
+    &__description {
+      font-size: 12px;
+      line-height: 14px;
+    }
+  }
+
+  .footer {
+    &__item {
+      margin-bottom: 5px;
+      font-size: 12px;
+      line-height: 14px;
+    }
+    &__site {
+      display: block;
+      margin-bottom: 5px;
+    }
+    &__phones {
+      display: block;
+    }
+  }
+
+}
+
+// Medium devices (tablets, less than 992px)
+@media (max-width: 991.98px) { 
+
+  .navbar-collapse {
+    background-color: rgba(26, 25, 25, 0.8);
+  }
+
+  .new__description,
+  .about__container,
+  .services__container,
+  .about-slider__container
+   {
+    padding: 50px;
+    text-align: center;
+  }
+
+  .service-packages {
+    &__item {
+      margin-bottom: 20px;    
+    }
+  }
+
+  .slide {
+    &__annotation {
+      padding-right: 50px;
+    }
+    &__description {
+      font-size: 14px;
+      line-height: 16px;
+    }
+  }
+}
+
+// Large devices (desktops, less than 1200px)
+@media (max-width: 1199.98px) {}
+
+

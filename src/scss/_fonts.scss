@@ -1,0 +1,37 @@
+@font-face {
+  font-family: 'Roboto';
+  font-display: swap;
+  src: url('../assets/fonts/roboto-thin-webfont.woff2') format('woff2'),
+    url('../assets/fonts/roboto-thin-webfont.woff') format('woff');
+  font-weight: 100;
+  font-style: thin;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-display: swap;
+  src: url('../assets/fonts/roboto-regular-webfont.woff2') format('woff2'),
+    url('../assets/fonts/roboto-regular-webfont.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-display: swap;
+  src: url('../assets/fonts/roboto-bold-webfont.woff2') format('woff2'),
+    url('../assets/fonts/roboto-bold-webfont.woff') format('woff');
+  font-weight: 700;
+  font-style: bold;
+}
+
+@font-face {
+  font-family: 'Oranienbaum';
+  font-display: swap;
+  src: url('../assets/fonts/oranienbaum-regular-webfont.woff') format('woff2'),
+    url('../assets/fonts/oranienbaum-regular-webfont.woff2') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+
